@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background */
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* cinematic gradient */
+
+    background:
+        radial-gradient(circle at 20% 30%, #a80000 0%, transparent 45%),
+        radial-gradient(circle at 85% 70%, #00003a 0%, transparent 40%),
+        linear-gradient(135deg, #520000, #020021);
+
+    overflow: hidden;
+}
+
+/* Glass Container */
+
+.glass {
+
+    width: clamp(280px, 85vw, 900px);
+
+    padding: clamp(25px, 5vw, 60px);
+
+    border-radius: 26px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.6),
+        inset 0 0 35px rgba(255, 255, 255, 0.03);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+/* subtle hover lift */
+
+.glass:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 40px 95px rgba(0, 0, 0, 0.7);
+}
+
+/* Logo */
+
+.mainLogo {
+
+    width: 540px;
+    height: auto;
+
+    filter:
+        drop-shadow(0 0 18px rgba(255, 255, 255, 0.22)) drop-shadow(0 0 25px rgba(255, 0, 0, 0.22));
+
+    transition: all .4s ease;
+}
+
+.mainLogo:hover {
+    transform: scale(1.05);
+    filter:
+        drop-shadow(0 0 25px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 40px rgba(255, 0, 0, 0.35));
+}
+
+/* Button */
+
+.ytButton {
+
+    font-family: "Orbitron", sans-serif;
+
+    padding: clamp(10px, 2.5vw, 14px) clamp(20px, 4vw, 34px);
+
+    font-size: clamp(12px, 2.5vw, 15px);
+
+    letter-spacing: 1px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: linear-gradient(135deg, #ff0000, #ff3b3b);
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 0, 0.65),
+        0 0 28px rgba(255, 0, 0, 0.35);
+
+    transition: .35s;
+}
+
+/* Button Hover */
+
+.ytButton:hover {
+
+    transform: translateY(-3px) scale(1.05);
+
+    background: linear-gradient(135deg,
+            #ff1a1a,
+            #ff5252);
+
+    box-shadow:
+        0 0 22px rgba(255, 0, 0, 0.9),
+        0 0 50px rgba(255, 0, 0, 0.55);
+}
+
+/* Responsive */
+
+@media(max-width:768px) {
+
+    .mainLogo {
+        width: 320px;
+    }
+
+    .glass {
+        padding: 35px 40px;
+    }
+
+}
+
+.mainLogo {
+    width: clamp(220px, 40vw, 520px);
+    max-width: 100%;
+}
+
+@media (max-width:768px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .glass {
+        width: 90vw;
+        padding: 25px;
+        gap: 10px;
+    }
+
+    .mainLogo {
+        width: 80%;
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .glass {
+        padding: 20px;
+        border-radius: 18px;
+    }
+
+    .mainLogo {
+        width: 90%;
+    }
+
+    .ytButton {
+        width: 100%;
+        text-align: center;
+    }
+
+}
